@@ -35,4 +35,12 @@ class FacteursPremiersTest {
         // THEN
         assertThat(result).isEqualTo(excepted);
     }
+
+    @Test()
+    void generate_doit_lever_exception_si_param_null() {
+        // WHEN
+        Throwable erreur = catchThrowable(() -> FacteursPremiers.generate(null));
+        // THEN
+        assertThat(erreur).isInstanceOf(NullPointerException.class);
+    }
 }
